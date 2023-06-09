@@ -1,13 +1,8 @@
 package com.automation.base;
 
 import java.util.*;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -37,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 
 
 
-public class BaseTest {
+public class BaseTest extends PropertiesUtility {
 	
 	 protected WebDriver driver;
 	 protected WebDriverWait wait;
@@ -54,9 +49,9 @@ public class BaseTest {
 	@BeforeMethod
 	public void setUpBeforeTestMethod() {
 		PropertiesUtility pro= new PropertiesUtility();
-		 Properties propfile  = pro.loadFile("applicationDataProperties");
-		 LaunchBrowswe("chrome");		
-		String url= pro.getPropertyValue("Loginurl");
+		Properties propfile  = pro.loadFile("applicationDataProperties");
+		LaunchBrowswe("chrome");
+		String url= propfile.getProperty("Loginurl");
 		getURL(url);
 		System.out.println("url :"+ url);		
 		log.info("url entered in the Address box");
@@ -80,9 +75,9 @@ public class BaseTest {
 	                break;
 	            case "chrome":
 	                WebDriverManager.chromedriver().setup();
-	                //ChromeOptions option = new ChromeOptions();
-	                //option.addArguments("--remote-allow-origins=*");
-	                 driver = new ChromeDriver();
+	                ChromeOptions option = new ChromeOptions();
+	                option.addArguments("--remote-allow-origins=*");
+	                 driver = new ChromeDriver(option);
 	                driver.manage().window().maximize();
 	                break;
 	            case "edge":
@@ -129,8 +124,8 @@ public class BaseTest {
 	    public void fluentWaitforVisibility(WebElement element) {
 	        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 	                .withTimeout(Duration.ofSeconds(30))
-	                .pollingEvery(Duration.ofSeconds(5))
-	                .ignoring(NoSuchElementException.class);
+	                .pollingEvery(Duration.ofSeconds(5));
+	                //.ignoring(NoSuchElementException.class);
 	        wait.until(ExpectedConditions.visibilityOf(element));
 	    }
 	    public  void ExplicitWaitforVisibility(WebElement element, String obj){

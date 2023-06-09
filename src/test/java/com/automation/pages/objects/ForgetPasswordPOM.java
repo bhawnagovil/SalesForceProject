@@ -4,15 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.automation.pages.base.BasePage;
+import com.automation.pages.base.BasePages;
 
-public class ForgetPasswordPOM extends BasePage
+public class ForgetPasswordPOM extends BasePages
 {
 	@FindBy(id="un")WebElement forgetPassUserNameEle;
 	@FindBy(id="continue")WebElement continueButtonEle;
 
 	public ForgetPasswordPOM(WebDriver driver) {
-		super(driver);
+		super();
 		
 	}
 	

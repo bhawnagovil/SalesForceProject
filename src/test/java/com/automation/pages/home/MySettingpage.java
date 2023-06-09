@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.automation.pages.base.BasePage;
+import com.automation.pages.base.BasePages;
 
-public class MySettingpage extends BasePage {
+public class MySettingpage extends BasePages {
 
 	MySettingpage s;
 	
@@ -33,7 +33,7 @@ public class MySettingpage extends BasePage {
      
 	
 	public MySettingpage(WebDriver driver) {
-		super(driver);
+		super();
 		
 	}
 

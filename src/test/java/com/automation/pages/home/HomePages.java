@@ -4,17 +4,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.automation.pages.base.BasePage;
+import com.automation.pages.base.BasePages;
 
-public class HomePage extends BasePage{
+public class HomePages extends BasePages {
 	
 	//public HomePage h;
 	
 	@FindBy(id= "userNavLabel") WebElement UserMenuDropDown;
 	
 
-	public HomePage(WebDriver driver) {
-		super(driver);
+	public HomePages(WebDriver driver) {
+		super();
 		
 	}
 	

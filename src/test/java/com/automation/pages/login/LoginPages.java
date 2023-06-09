@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.automation.pages.base.BasePage;
+import com.automation.pages.base.BasePages;
 
-public class LoginPage  extends BasePage {
-	LoginPage login;
+public class LoginPages extends BasePages {
+	LoginPages login;
 
 	@FindBy(id ="username") WebElement userNameElement;
 	@FindBy(id = "password") WebElement passwordElement;
@@ -20,9 +20,9 @@ public class LoginPage  extends BasePage {
 	
 	
 	
-	public LoginPage(WebDriver driver) {
+	public LoginPages(WebDriver driver) {
 		
-		super(driver);	
+		super();
 	}
 	public void clearAllTextuseranme(){
 		cleartext(userNameElement);

@@ -1,17 +1,17 @@
 package com.automation.tests;
 
 import java.util.Properties;
-import org.apache.hc.core5.util.Asserts;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.automation.base.BaseTest;
-import com.automation.pages.home.HomePage;
-import com.automation.pages.login.LoginPage;
+import com.automation.pages.home.HomePages;
+import com.automation.pages.login.LoginPages;
 import com.automation.utility.PropertiesUtility;
 
 public class LoginTest extends BaseTest{
-	public HomePage home;
-	public LoginPage loginpage;
+	public HomePages home;
+	public LoginPages loginpage;
 	public LoginTest test;
 	public PropertiesUtility pro;
 	public Properties appProp;
@@ -24,8 +24,8 @@ public class LoginTest extends BaseTest{
 		 appProp= pro.loadFile("applicationDataProperties");
 		 System.out.println(appProp.getProperty("Loginurl"));
 		String expectedpagetitle= appProp.getProperty("loginPageTitle");
-		LoginPage loginPage=new LoginPage(driver);
-		String actulTitle=test.getTitleofPage();
+		LoginPages loginPage=new LoginPages(driver);
+		String actulTitle=driver.getTitle();
 		Assert.assertEquals(actulTitle,expectedpagetitle, "actual and expected title are not matching");
 		log.info("Login page title is correct and displayed");
 	}
@@ -37,7 +37,7 @@ public class LoginTest extends BaseTest{
 		 appProp= pro.loadFile("applicationDataProperties");
 		String userId=appProp.getProperty("login.valid.userid");
 		String password=appProp.getProperty("login.valid.password");
-		 loginpage=new LoginPage(driver);
+		 loginpage=new LoginPages(driver);
 		loginpage.clearAllTextuseranme();
 		loginpage.enterUsername(userId);
 		loginpage.clickLoginButton();
@@ -55,9 +55,9 @@ public class LoginTest extends BaseTest{
 		 appProp= pro.loadFile("applicationDataProperties");
 		String userId=appProp.getProperty("login.valid.userid");
 		String password=appProp.getProperty("login.valid.password");
-		loginpage=new LoginPage(driver);
+		loginpage=new LoginPages(driver);
 		driver=loginpage.navigatingfromLoginToHome(userId,password);
-		home= new HomePage(driver);
+		home= new HomePages(driver);
 		String actualTitle=test.getTitleofPage();
 		String expectedTitle= appProp.getProperty("login.valid.HomePageTitle");
 		Assert.assertEquals(actualTitle, expectedTitle, "expected and actual titles are not matching");	
@@ -71,9 +71,9 @@ public class LoginTest extends BaseTest{
 		 appProp= pro.loadFile("applicationDataProperties");
 		String userId=appProp.getProperty("login.valid.userid");
 		String password=appProp.getProperty("login.valid.password");
-		loginpage=new LoginPage(driver);
+		loginpage=new LoginPages(driver);
 		loginpage.navigatingfromLoginToHome(userId,password);
-		 home= new HomePage(driver);
+		 home= new HomePages(driver);
 		home.selectElementfromDropDown("Logout");
 		//loginpage.checkifUsernameisPopulated(userId);
 		Assert.assertTrue(loginpage.checkifUsernameisPopulated(userId),"username field is not populated");
@@ -90,7 +90,7 @@ public class LoginTest extends BaseTest{
 			String userId=appProp.getProperty("login.valid.userid");
 			String password=appProp.getProperty("login.valid.password");
 			loginpage.navigatingfromLoginToHome(userId,password);
-			home= new HomePage(driver);
+			home= new HomePages(driver);
 			home.selectElementfromDropDown("Logout");
 			Assert.assertTrue(loginpage.checkIfCheckBoxselected(),"Remember me checkbox is not selected");
 		    log.info("Remeber me checkbox is checked if selected or not");	    

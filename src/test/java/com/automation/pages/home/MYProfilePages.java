@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.automation.pages.base.BasePage;
+import com.automation.pages.base.BasePages;
 
-public class MYProfilePage extends BasePage{
-	MYProfilePage profilepage;
+public class MYProfilePages extends BasePages {
+	MYProfilePages profilepage;
 	
 	
 	@FindBy(xpath= "//a[@class='contactInfoLaunch editLink']//img[@title='Edit Profile']")
@@ -31,8 +31,8 @@ public class MYProfilePage extends BasePage{
 	@FindBy(xpath="//li[@id='contactTab']")WebElement ContactButton;
 	String EditProfileframeid= "contactInfoContentId";
 	
-	public MYProfilePage(WebDriver driver) {
-		super(driver);
+	public MYProfilePages(WebDriver driver) {
+		super();
 		
 	}
 	

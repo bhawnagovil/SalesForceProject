@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.automation.pages.base.BasePage;
+import com.automation.pages.base.BasePages;
 
-public class EditProfilePopUPPage extends BasePage {
-	EditProfilePopUPPage edit;
+public class EditProfilePopUPPages extends BasePages {
+	EditProfilePopUPPages edit;
 
 	@FindBy(xpath= "//li[@id='aboutTab']")WebElement EditProfileAboutTabEle;
 	@FindBy(xpath="//input[@id='lastName']")WebElement EditProfileLastNameEle;
@@ -20,8 +20,8 @@ public class EditProfilePopUPPage extends BasePage {
 	String EditProfileframeid= "contactInfoContentId";
 			
 			
-	public EditProfilePopUPPage(WebDriver driver) {
-		super(driver);
+	public EditProfilePopUPPages(WebDriver driver) {
+		super();
 		
 	}
 	

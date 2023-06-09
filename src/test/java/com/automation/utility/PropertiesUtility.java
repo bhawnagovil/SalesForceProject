@@ -1,13 +1,13 @@
 package com.automation.utility;
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 public class PropertiesUtility {
-    public FileInputStream stream = null;
+    public FileReader stream = null;
 	public Properties propFile = null;
 	
 	
@@ -25,7 +25,7 @@ public class PropertiesUtility {
 			
 		}
 		try {
-			stream=new FileInputStream(propertyFilePath);
+			stream=new FileReader(propertyFilePath);
 			propFile.load(stream);
 		} catch (FileNotFoundException e) {
 			

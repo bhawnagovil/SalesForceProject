@@ -17,12 +17,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.logging.log4j.LogManager;
-
 import com.automation.utility.ExtentReportsUtility;
 import com.automation.utility.Log4JUtility;
 
-public class BasePage {
+public class BasePages {
 	protected  WebDriver driver;
 	protected  WebDriverWait wait;
 	protected Log4JUtility logObject=Log4JUtility.getInstance();
@@ -33,8 +31,7 @@ public class BasePage {
 	@FindBy(id = "password") WebElement passwordElement;
 	@FindBy(id = "Login") WebElement loginButton;
 	
-	public BasePage(WebDriver driver) {
-		this.driver=driver;
+	public BasePages() {
 		System.out.println("driver in basePage="+driver);
 		PageFactory.initElements(driver, this);
 		log=(Logger) logObject.getLogger();

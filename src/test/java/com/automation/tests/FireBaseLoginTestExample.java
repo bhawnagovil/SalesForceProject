@@ -1,33 +1,23 @@
 package com.automation.tests;
 
-import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
+import com.automation.pages.base.BasePages;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.automation.base.BaseTest;
 import com.automation.utility.PropertiesUtility;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 
 public class FireBaseLoginTestExample extends BaseTest {
+	public BasePages page = new BasePages();
 	
 	@Test
 	public void login_to_firebase_testscript() throws InterruptedException {
@@ -40,23 +30,23 @@ public class FireBaseLoginTestExample extends BaseTest {
 		String password=appProp.getProperty("login.valid.password");
 		
 		String expectedTitle = "Selenium";
-		
-		String actualTitle = getPageTitle();
+
+		String actualTitle = page.getPageTitle();
 		Assert.assertEquals(actualTitle, expectedTitle);
 	
 		
 		By userName = By.id("email_field");
 		WebElement userNameElement = driver.findElement(userName);
 		ExplicitWaitforVisibility(userNameElement, "username field");
-		enterText(userNameElement,userId,"username");
+		page.enterText(userNameElement,userId,"username");
 		
 		By passwrd = By.id("password_field");
 		WebElement passwordElement = driver.findElement(passwrd);
-		enterText(passwordElement,password,"password");
+		page.enterText(passwordElement,password,"password");
 		
 		By button = By.tagName("button");
 		WebElement buttonElement = driver.findElement(button);
-		clickElement(buttonElement,"login button");
+		page.clickElement(buttonElement,"login button");
 
 }
 	@Test
@@ -65,7 +55,7 @@ public class FireBaseLoginTestExample extends BaseTest {
 		String expectedError = "Error : The password is invalid or the user does not have a password.";
 		String expectedTitle = "Selenium";
 		
-		String actualTitle = getPageTitle();
+		String actualTitle = page.getPageTitle();
 		if (expectedTitle.equals(actualTitle)) {
 			System.out.println("title matched");
 		} else {
@@ -74,15 +64,15 @@ public class FireBaseLoginTestExample extends BaseTest {
 		Thread.sleep(4000);
 		By userName = By.id("email_field");
 		WebElement userNameElement = driver.findElement(userName);
-		enterText(userNameElement,"admin123@gmail.com","username");
+		page.enterText(userNameElement,"admin123@gmail.com","username");
 		
 		By password = By.id("password_field");
 		WebElement passwordElement = driver.findElement(password);
-		enterText(passwordElement,"admin123","password");
+		page.enterText(passwordElement,"admin123","password");
 		
 		By button = By.tagName("button");
 		WebElement buttonElement = driver.findElement(button);
-		clickElement(buttonElement,"login button");
+		page.clickElement(buttonElement,"login button");
 		Thread.sleep(4000);
 		
 		Actions action=new Actions(driver);

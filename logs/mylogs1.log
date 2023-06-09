@@ -19,3 +19,24 @@
 20230609 10:20:27 INFO  [main] base.BaseTest BaseTest.java96 - chromeis opened
 20230609 10:32:30 INFO  [main] base.BaseTest BaseTest.java96 - chromeis opened
 20230609 10:36:23 INFO  [main] base.BaseTest BaseTest.java96 - chromeis opened
+20230609 23:41:22 INFO  [main] base.BaseTest BaseTest.java91 - chromeis opened
+20230609 23:42:31 INFO  [main] base.BaseTest BaseTest.java91 - chromeis opened
+20230609 23:45:33 INFO  [main] base.BaseTest BaseTest.java91 - chromeis opened
+20230609 23:47:53 INFO  [main] base.BaseTest BaseTest.java91 - chromeis opened
+20230609 23:47:54 INFO  [main] base.BaseTest BaseTest.java96 - url enetered in the url field
+20230609 23:47:54 INFO  [main] base.BaseTest BaseTest.java57 - url entered in the Address box
+20230609 23:47:54 INFO  [main] tests.LoginTest LoginTest.java21 - inside the login Page of salesForce application
+20230609 23:50:27 INFO  [main] base.BaseTest BaseTest.java91 - chromeis opened
+20230609 23:50:29 INFO  [main] base.BaseTest BaseTest.java96 - url enetered in the url field
+20230609 23:50:29 INFO  [main] base.BaseTest BaseTest.java57 - url entered in the Address box
+20230609 23:50:29 INFO  [main] tests.LoginTest LoginTest.java21 - inside the login Page of salesForce application
+20230609 23:51:59 INFO  [main] base.BaseTest BaseTest.java91 - chromeis opened
+20230609 23:52:01 INFO  [main] base.BaseTest BaseTest.java96 - url enetered in the url field
+20230609 23:52:01 INFO  [main] base.BaseTest BaseTest.java57 - url entered in the Address box
+20230609 23:52:01 INFO  [main] tests.LoginTest LoginTest.java21 - inside the login Page of salesForce application
+20230609 23:52:01 INFO  [main] tests.LoginTest LoginTest.java30 - Login page title is correct and displayed
+20230610 00:12:28 INFO  [main] base.BaseTest BaseTest.java91 - chromeis opened
+20230610 00:12:30 INFO  [main] base.BaseTest BaseTest.java96 - url enetered in the url field
+20230610 00:12:30 INFO  [main] base.BaseTest BaseTest.java57 - url entered in the Address box
+20230610 00:12:30 INFO  [main] tests.LoginTest LoginTest.java21 - inside the login Page of salesForce application
+20230610 00:12:30 INFO  [main] tests.LoginTest LoginTest.java30 - Login page title is correct and displayed
