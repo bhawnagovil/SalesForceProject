@@ -1,0 +1,32 @@
+package Com.day2;
+
+public class Fibbonacciseries {
+    
+	private void printfibonacciSeries(int n) {
+		int n1=0, n2=1, n3=0;int i=1;
+		if(n<=0) {
+			System.out.println("number is invalid");
+		}
+		else {
+			do {
+				System.out.println(n1);
+				i++;
+			}
+			while(i<n);{
+				n3= n1+n2;				
+				System.out.print(n3 + ", ");
+				n1=n2;
+				n2=n3;
+				
+			}
+		}
+		
+		
+	}
+	public static void main(String[] args) {
+	
+		Fibbonacciseries series= new Fibbonacciseries();
+		series.printfibonacciSeries(9);
+	}
+
+}

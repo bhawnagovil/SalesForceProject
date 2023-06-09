@@ -1,0 +1,21 @@
+20230605 12:09:34 INFO  [main] base.LoggingTest LoggingTest.java13 - browser has been launched
+20230605 12:09:34 WARN  [main] base.LoggingTest LoggingTest.java14 - printing warning
+20230605 12:09:34 DEBUG [main] base.LoggingTest LoggingTest.java15 - printing error messages
+20230605 12:09:34 ERROR [main] base.LoggingTest LoggingTest.java16 - printing error
+20230605 12:09:34 FATAL [main] base.LoggingTest LoggingTest.java17 - printing fatal messages
+20230605 12:09:34 INFO  [main] base.LoggingTest LoggingTest.java18 - completed
+20230607 16:38:27 INFO  [main] base.BaseTest BaseTest.java93 - chromeis opened
+20230607 16:39:13 INFO  [main] base.BaseTest BaseTest.java93 - chromeis opened
+20230607 16:41:03 INFO  [main] base.BaseTest BaseTest.java93 - chromeis opened
+20230607 16:41:52 INFO  [main] base.BaseTest BaseTest.java93 - chromeis opened
+20230608 09:53:47 INFO  [main] base.BaseTest BaseTest.java93 - chromeis opened
+20230608 12:46:48 INFO  [main] base.BaseTest BaseTest.java93 - chromeis opened
+20230608 13:05:52 INFO  [main] base.BaseTest BaseTest.java94 - chromeis opened
+20230608 13:10:15 INFO  [main] base.BaseTest BaseTest.java94 - chromeis opened
+20230608 14:01:15 INFO  [main] base.BaseTest BaseTest.java94 - chromeis opened
+20230609 09:36:04 INFO  [main] base.BaseTest BaseTest.java94 - chromeis opened
+20230609 09:43:24 INFO  [main] base.BaseTest BaseTest.java94 - chromeis opened
+20230609 10:18:47 INFO  [main] base.BaseTest BaseTest.java96 - chromeis opened
+20230609 10:20:27 INFO  [main] base.BaseTest BaseTest.java96 - chromeis opened
+20230609 10:32:30 INFO  [main] base.BaseTest BaseTest.java96 - chromeis opened
+20230609 10:36:23 INFO  [main] base.BaseTest BaseTest.java96 - chromeis opened

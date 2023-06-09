@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+C:\Training Tech Arch\Eclipse Workspace\.metadata\.plugins\org.eclipse.jdt.core
+75931715.index
+1865797976.index
+4200898265.index

@@ -1,0 +1,33 @@
+package Com.Day1;
+
+/*convert  float to double
+	  double to float
+	  int to long
+	  long to int*/
+
+public class TypeCasting {
+	public static void main(String[] args) {
+		float f= 3.15f;
+		double d= f;
+		double d2= 2.345;
+		float f2= (float)d2;
+		int i= 5;
+		long l= i;
+		int i2= (int)l;
+		
+		
+		
+		System.out.println("Widening casting is done automatically when passing a smaller size type to a larger size");
+		System.out.println("changing float to double  :" +d);
+		System.out.println("Narrowing casting must be done manually by placing the type in parentheses in front of the value:");
+		System.out.println("changing double to float  :" +f2);
+		System.out.println("changing int to long  :" + l);
+		System.out.println("changing long to int  :" + i2);
+		
+		
+		
+		
+		
+	}
+
+}

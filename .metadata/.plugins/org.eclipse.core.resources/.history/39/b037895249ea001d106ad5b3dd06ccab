@@ -1,0 +1,40 @@
+package Com.Day1;
+import java.util.Scanner;
+
+public class SwapNumbers {
+	
+	public void swapNumberswithouttemp(int x, int y) {
+		
+		x= x+y;
+		y= x-y;
+		x= x-y;
+		System.out.println("After swapping the numbers x and y :"+ x + " "+ y);	
+		
+	}
+	public void swapNumberswithtemp(int x, int y) {
+		
+		int temp;
+		temp= x;//5
+		x= y;//6
+		y= temp;//5
+		System.out.println("After swapping the number x and y, swapped numbers are :"+ x + " "+ y);	
+		
+	}
+	
+
+	public static void main(String[] args) {
+		SwapNumbers numbers= new SwapNumbers();
+		System.out.println(" Enter the first number");
+		Scanner sc= new Scanner(System.in);
+		int firstnumber= sc.nextInt();
+		System.out.println(" Enter the second number");
+		int secondnumber= sc.nextInt();
+		numbers.swapNumberswithouttemp(firstnumber, secondnumber);
+		numbers.swapNumberswithtemp(firstnumber, secondnumber);
+		
+		
+		
+
+	}
+
+}
