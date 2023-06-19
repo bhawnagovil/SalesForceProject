@@ -22,7 +22,7 @@ public class LoginPages extends BasePages {
 	
 	public LoginPages(WebDriver driver) {
 		
-		super();
+		super(driver);
 	}
 	public void clearAllTextuseranme(){
 		cleartext(userNameElement);
@@ -55,7 +55,9 @@ public class LoginPages extends BasePages {
 	}
 	
 	public void clickcheckBox() {
+		if(!RemembermecheckBox.isSelected()) {
 		clickElement(RemembermecheckBox,"RememeberMeCheckBox");
+		}
 	}
     
 	public WebDriver clickForgotPassword(){
@@ -91,5 +93,16 @@ public class LoginPages extends BasePages {
 		 return driver;
 		 
 	  }
+	 
+	 public void  navigatingfromLoginToHomeNotReturingdriver(String usertext,String pwdtext ) {
+		 clearAllTextuseranme();
+		 enterUsername(usertext);
+		 clearAllTextPassword();
+		 enterPassword(pwdtext);
+		 clickcheckBox();
+		 clickLoginButton(); 
+	 }
+	 
+	 
 	
 }

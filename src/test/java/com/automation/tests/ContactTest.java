@@ -1,5 +1,5 @@
 package com.automation.tests;
 
-public class CreateAccountTest {
+public class ContactTest {
 
 }

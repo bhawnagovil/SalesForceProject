@@ -12,7 +12,7 @@ public class ForgetPasswordPOM extends BasePages
 	@FindBy(id="continue")WebElement continueButtonEle;
 
 	public ForgetPasswordPOM(WebDriver driver) {
-		super();
+		super(driver);
 		
 	}
 	

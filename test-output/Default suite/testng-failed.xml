@@ -3,19 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automation.tests.LoginTest">
+      <class name="com.automation.tests.LeadsTest">
         <methods>
-          <include name="valiadateLoginPageDisplayedAndValidatePageTitle"/>
           <include name="setUpBeforeTest"/>
-          <include name="checkIfUserNamePopulatedAfterLogOutHomePage"/>
-          <include name="checkErrorMsgwhenWrongUserNameAndPaSSWORDEntered"/>
+          <include name="checkGoFunctionality"/>
           <include name="setUpAfterTestMethod"/>
-          <include name="checkIfRememberMecheckBoxIsChecked"/>
-          <include name="validateErrorMessageWhenPasswordFieldempty"/>
           <include name="setUpBeforeTestMethod"/>
-          <include name="validateHomePageDisplayed"/>
         </methods>
-      </class> <!-- com.automation.tests.LoginTest -->
+      </class> <!-- com.automation.tests.LeadsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

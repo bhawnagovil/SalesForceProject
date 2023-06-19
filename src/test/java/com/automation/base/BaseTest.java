@@ -34,9 +34,9 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest extends PropertiesUtility {
 	
-	 protected WebDriver driver;
-	 protected WebDriverWait wait;
-	 protected Logger log;
+	 public  WebDriver driver;
+	 public WebDriverWait wait;
+	 public  Logger log;
 	 
 	
 	
@@ -46,8 +46,8 @@ public class BaseTest extends PropertiesUtility {
 	}
 	
 	
-	@BeforeMethod
-	public void setUpBeforeTestMethod() {
+	    @BeforeMethod
+	    public void setUpBeforeTestMethod() {
 		PropertiesUtility pro= new PropertiesUtility();
 		Properties propfile  = pro.loadFile("applicationDataProperties");
 		LaunchBrowswe("chrome");
@@ -63,9 +63,6 @@ public class BaseTest extends PropertiesUtility {
 	driver.close();	
 	}
 		
-	  
-    
-
 	    public void LaunchBrowswe(String browsername){
 	        switch(browsername){
 	            case "firefox":
@@ -173,7 +170,8 @@ public class BaseTest extends PropertiesUtility {
 	        action.clickAndHold(from).moveToElement(target).release().build().perform();
 	    }
 
-	    public String  getTitleofPage(){
+	    public String  getTitleofPage(WebDriver driver){
+	    	this.driver= driver;
 	        String title=driver.getTitle();
 	        return title;
 

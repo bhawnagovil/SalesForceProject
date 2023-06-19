@@ -1,4 +1,4 @@
-package com.automation.pages.home;
+package com.automation.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,7 +21,7 @@ public class EditProfilePopUPPages extends BasePages {
 			
 			
 	public EditProfilePopUPPages(WebDriver driver) {
-		super();
+		super(driver);
 		
 	}
 	

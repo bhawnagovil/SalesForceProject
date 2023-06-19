@@ -2,6 +2,7 @@ package com.automation.pages.base;
 
 import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +16,10 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
 
 import com.automation.utility.ExtentReportsUtility;
 import com.automation.utility.Log4JUtility;
@@ -30,14 +34,27 @@ public class BasePages {
 	@FindBy(id ="username") WebElement userNameElement;
 	@FindBy(id = "password") WebElement passwordElement;
 	@FindBy(id = "Login") WebElement loginButton;
+	@FindBy(id= "userNavLabel") WebElement UserMenuDropDown;
+	@FindBy(xpath="//a[text()= 'Logout']" ) WebElement logout;
 	
-	public BasePages() {
+	
+	public void selectinguserMenuDropDown() {
+		applyImplicitWait();
+		waitUntilElementIsClickable(UserMenuDropDown);
+		clickElementByJavaScriptExecutor(UserMenuDropDown);
+	}
+	
+	public BasePages(WebDriver driver) {
+		this.driver=driver;
 		System.out.println("driver in basePage="+driver);
 		PageFactory.initElements(driver, this);
 		log=(Logger) logObject.getLogger();
 		
 	}
-       public WebDriver navigatingfromLoginToHome(String usertext,String pwdtext ) {
+	
+      
+
+	public WebDriver navigatingfromLoginToHome(String usertext,String pwdtext ) {
 		cleartext(userNameElement);
 		enterText(userNameElement,usertext, "UsernametextBox");
 		cleartext(passwordElement);
@@ -46,7 +63,9 @@ public class BasePages {
 		 return driver;
 		 
 	  }
-		 
+		public void takingElementIntoViewByJavaScriptExecutor(WebElement element ) {
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		}
 	
 	 public void cleartext(WebElement element) {
 	    	element.clear();
@@ -165,8 +184,14 @@ public class BasePages {
 	        log.info("Switched to alert");
 	        return alert;
 	    }
+	   
 	    public void switchToFrame(String id) {
 	    	driver.switchTo().frame(id)	;
+	    }
+	    
+	  public void clickElementByJavaScriptExecutor(WebElement element) {
+	        JavascriptExecutor executor = (JavascriptExecutor) driver;
+	        executor.executeScript("arguments[0].click();", element);
 	    }
 	    
 	    public void hoveringMouseToElement(WebElement element){
@@ -174,8 +199,55 @@ public class BasePages {
 	    	action.moveToElement(element).click().perform();
 	    	
 	    }
+	    
+	    public void switchingFromHomeToDeveloperConsoleHandleWindows() {
+	    	  Set<String> windows = driver.getWindowHandles(); //[parentid,childid,subchildId]
+	          Iterator<String> it = windows.iterator();
+	          String parentId = it.next();
+	          String childId = it.next();
+	          driver.switchTo().window(childId);
+	          driver.close();
+	          driver.switchTo().window(parentId);
+	    }
+	    
+	    public void switchingFromParentToChildAndThenParentHandle() {
+	    	  Set<String> windows = driver.getWindowHandles(); //[parentid,childid,subchildId]
+	          Iterator<String> it = windows.iterator();
+	          String parentId = it.next();
+	          String childId = it.next();
+	          driver.switchTo().window(childId);
+	          driver.close();
+	          driver.switchTo().window(parentId);	
+	    }
+	    public void switchingFromParentToChildHandle() {
+	    	 Set<String> windows = driver.getWindowHandles(); //[parentid,childid,subchildId]
+	          Iterator<String> it = windows.iterator();
+	          String parentId = it.next();
+	          String childId = it.next();
+	          driver.switchTo().window(childId);
+	          	
+	    }
+	    public void switchToHometopopupWindowAndClose() {
+	    	 Set<String> windows = driver.getWindowHandles(); //[parentid,childid,subchildId]
+	          Iterator<String> it = windows.iterator();
+	          String parentId = it.next();
+	          String childId = it.next();
+	          driver.switchTo().window(childId);
+	          driver.close();
+	          driver.switchTo().window(parentId);
+	    	
+	    }
 	  
 	 
+		public WebDriver selectingLogoutFromHome() {
+			selectinguserMenuDropDown();
+			clickElement(logout, "logout");
+			return driver;
+			
+		}
+		
+		
+		
 	  
 	  
 
